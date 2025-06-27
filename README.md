@@ -9,7 +9,7 @@
 - `I18next` localisation support
 - `ESLint` lint, fix, coverage
 - `Prettier` lint, fix, organize imports
-- Pre-commit `hook` with lint staged
+- Pre-commit `hook` with lint and test
 - `Editor config`
 - `Playwright`, `Vitest` unit and e2e tests and coverage
 - `NPM` check updates
