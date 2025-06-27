@@ -29,7 +29,7 @@ export const registerSchema = z
 			ctx.addIssue({
 				code: z.ZodIssueCode.custom,
 				message: t('form.passwordsDontMatch'),
-				path: ['confirmPassword'], // ✅ works perfectly with RHF
+				path: ['confirmPassword'],
 			})
 		}
 	})

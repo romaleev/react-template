@@ -16,11 +16,7 @@ const RegisterForm = () => {
 		reset,
 		formState: { errors, isSubmitting },
 	} = useForm<RegisterFormValues>({
-		resolver: zodResolver(registerSchema, {
-			errorMap: (_issue, ctx) => {
-				return { message: ctx.defaultError }
-			},
-		}),
+		resolver: zodResolver(registerSchema),
 	})
 
 	const onSubmit = async (data: RegisterFormValues) => {
