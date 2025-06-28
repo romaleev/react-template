@@ -1,7 +1,7 @@
 import ky from 'ky'
 import { RegisterFormValues } from '#src/validation/registerSchema'
 
-export const API_URL = 'http://localhost:4200/api'
+export const API_URL = 'http://localhost:4100/api'
 
 const api = ky.create({
 	prefixUrl: API_URL,

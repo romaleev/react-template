@@ -31,7 +31,7 @@ Install NPM dependencies
 ### Development
 
 Start app in Development mode with hot reload.
-The app will be available at `http://localhost:4200`.
+The app will be available at `http://localhost:4100`.
 
 `pnpm start` Start the app
 

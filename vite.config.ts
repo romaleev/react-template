@@ -40,7 +40,7 @@ export default defineConfig({
 		},
 	],
 	server: {
-		port: parseInt(env.parsed?.CLIENT_PORT || '4200'),
+		port: parseInt(env.parsed?.CLIENT_PORT || '4100'),
 	},
 	build: {
 		chunkSizeWarningLimit: 600, // Adjust chunk size limit
