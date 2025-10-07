@@ -52,8 +52,8 @@ test.describe('RegisterForm E2E', () => {
 	})
 
 	test('shows error notification when registration fails', async ({ page }) => {
-		await page.route('**/api/register', (route) => {
-			route.fulfill({
+		await page.route('**/api/register', async (route) => {
+			await route.fulfill({
 				status: 500,
 				contentType: 'application/json',
 				body: JSON.stringify({ error: 'Server error' }),

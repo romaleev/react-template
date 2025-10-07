@@ -8,6 +8,5 @@ const api = ky.create({
 	throwHttpErrors: true,
 })
 
-export const registerUser = async (data: RegisterFormValues) => {
-	return api.post('register', { json: data }).json<{ message: string }>()
-}
+export const registerUser = (data: RegisterFormValues) =>
+	api.post('register', { json: data }).json<{ message: string }>()

@@ -1,4 +1,4 @@
-# monorepo-template
+# react-template
 
 **React Register Form Template** powered with:
 - `React` with `Zustand` state management,
