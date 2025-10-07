@@ -13,8 +13,8 @@
 		"test:e2e": "pnpm exec playwright test --project=local",
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage --reporter=text",
-		"lint": "tsc --noEmit && eslint {src,e2e}/**/*.ts && prettier {src,e2e}/**/*.ts",
-		"lint:fix": "tsc --noEmit && eslint --fix {src,e2e}/**/*.ts && prettier --write {src,e2e}/**/*.ts",
+		"lint": "tsc && eslint {src,e2e}/**/*.ts && prettier {src,e2e}/**/*.ts",
+		"lint:fix": "tsc && eslint --fix {src,e2e}/**/*.ts && prettier --write {src,e2e}/**/*.ts",
 		"update": "pnpm add npm-check-updates@latest -D && ncu -u && pnpm i && pnpm audit fix && pnpm lint && pnpm test",
 		"prepare": "husky && playwright install"
 	},
