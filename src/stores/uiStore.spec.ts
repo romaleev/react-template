@@ -1,5 +1,5 @@
-import { act } from '@testing-library/react'
 import { useUIStore } from '#src/stores/uiStore'
+import { act } from '@testing-library/react'
 
 describe('UI Store', () => {
 	beforeEach(() => {

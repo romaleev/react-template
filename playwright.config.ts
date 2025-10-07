@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv'
 import { defineConfig } from '@playwright/test'
+import * as dotenv from 'dotenv'
 
 const env = dotenv.config({ path: './.env' })
 

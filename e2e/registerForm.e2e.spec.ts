@@ -1,5 +1,5 @@
-import { test, expect } from '@playwright/test'
 import i18n from '#root/i18n'
+import { expect, test } from '@playwright/test'
 
 const { t } = i18n
 

@@ -1,9 +1,9 @@
-import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
+import dotenv from 'dotenv'
 import path from 'path'
 import { ViteDevServer } from 'vite'
-import dotenv from 'dotenv'
 import tsconfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from 'vitest/config'
 
 const env = dotenv.config({ path: './.env' })
 
