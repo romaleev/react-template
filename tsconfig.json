@@ -1,11 +1,46 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.client.json" },
-    { "path": "./tsconfig.vite.json"},
-		{ "path": "./tsconfig.build.json" }
-  ],
-	"compilerOptions": {
-		"esModuleInterop": true
-	},
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#root/*": [
+        "*"
+      ],
+      "#src/*": [
+        "src/*"
+      ]
+    },
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
+    "target": "esnext",
+    "useDefineForClassFields": true,
+		"outDir": "./dist",
+    "lib": [
+      "esnext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "esnext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "types": [
+      "vite/client",
+      "vitest/globals"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "e2e/**/*.ts"
+  ]
 }

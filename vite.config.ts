@@ -1,23 +1,21 @@
 import { defineConfig } from 'vitest/config'
-// import react from '@vitejs/plugin-react-swc'
 import react from '@vitejs/plugin-react'
 import path from 'path'
-import { TsconfigRaw } from 'esbuild'
-import tsconfigRawData from './tsconfig.build.json'
 import { ViteDevServer } from 'vite'
-import * as dotenv from 'dotenv'
-
-const tsconfigRaw: TsconfigRaw = tsconfigRawData as TsconfigRaw
+import dotenv from 'dotenv'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 const env = dotenv.config({ path: './.env' })
 
 export default defineConfig({
 	plugins: [
+		tsconfigPaths({
+			projects: ['./tsconfig.json'],
+		}),
 		react(),
 		{
 			name: 'custom-api-server',
 			configureServer(server: ViteDevServer) {
-				// Add custom API route
 				server.middlewares.use('/api/register', async (req, res, next) => {
 					if (req.method !== 'POST') return next()
 
@@ -44,12 +42,12 @@ export default defineConfig({
 		port: parseInt(env.parsed?.CLIENT_PORT || '4100'),
 	},
 	build: {
-		chunkSizeWarningLimit: 600, // Adjust chunk size limit
+		chunkSizeWarningLimit: 1000,
 		rollupOptions: {
 			output: {
 				manualChunks(id) {
 					if (id.includes('node_modules')) {
-						return 'vendor' // General vendor chunk
+						return 'vendor'
 					}
 				},
 			},
@@ -60,9 +58,6 @@ export default defineConfig({
 			'#root': path.resolve(__dirname),
 			'#src': path.resolve(__dirname, 'src'),
 		},
-	},
-	esbuild: {
-		tsconfigRaw,
 	},
 	test: {
 		globals: true,
