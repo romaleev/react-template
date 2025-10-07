@@ -16,7 +16,7 @@ export default defineConfig({
 		{
 			name: 'custom-api-server',
 			configureServer(server: ViteDevServer) {
-				server.middlewares.use('/api/register', async (req, res, next) => {
+				server.middlewares.use('/api/register', (req, res, next) => {
 					if (req.method !== 'POST') return next()
 
 					let body = ''

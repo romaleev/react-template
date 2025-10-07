@@ -21,7 +21,7 @@ export default defineConfig({
 			name: 'local',
 			outputDir: 'test-results/local',
 			use: {
-				baseURL: `http://localhost:${env.parsed.CLIENT_PORT}`,
+				baseURL: `http://localhost:${env.parsed?.CLIENT_PORT}`,
 			},
 		},
 	],

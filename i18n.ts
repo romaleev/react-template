@@ -2,7 +2,7 @@ import i18n from 'i18next'
 
 // Dynamically import locale file to support both ESM & CommonJS
 import translationEN from '#root/locales/en'
-;(async () => {
+void (async () => {
 	const resources = {
 		en: { translation: translationEN },
 	}
